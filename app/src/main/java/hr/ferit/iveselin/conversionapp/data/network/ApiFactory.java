@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiFactory {
 
-    public static final String BASE_URL = "http://hnbex.eu/api/v1/rates/";
+    private static final String BASE_URL = "http://hnbex.eu/api/v1/rates/";
 
     private static Retrofit retrofit;
     private static ApiEndpoint apiEndpoint;

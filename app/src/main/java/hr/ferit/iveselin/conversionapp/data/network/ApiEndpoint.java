@@ -11,5 +11,4 @@ public interface ApiEndpoint {
     @GET("daily")
     Call<List<CurrencyRate>> getCurrencyRates();
 
-
 }

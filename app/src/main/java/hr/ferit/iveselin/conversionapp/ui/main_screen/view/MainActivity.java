@@ -1,5 +1,7 @@
 package hr.ferit.iveselin.conversionapp.ui.main_screen.view;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -62,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements MainScreenInterfa
 
     @Override
     public void showErrorMessage() {
-        Toast.makeText(this, "Oooops, something went wrong...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(), "Oooops, something went wrong...", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -102,6 +104,38 @@ public class MainActivity extends AppCompatActivity implements MainScreenInterfa
     @Override
     public void clearResult() {
         convertResult.setText("");
+    }
+
+    @Override
+    public void showNoDataErrorDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setTitle(R.string.no_data_dialog_title);
+        builder.setMessage(R.string.no_data_dialog_message);
+
+        builder.setNegativeButton(R.string.no_data_dialog_cancel_text, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                presenter.dismissClicked();
+            }
+        });
+
+        builder.setPositiveButton(R.string.no_data_dialog_retry_text, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                presenter.retryClicked();
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+    }
+
+    @Override
+    public void exitApp() {
+        finish();
     }
 
 

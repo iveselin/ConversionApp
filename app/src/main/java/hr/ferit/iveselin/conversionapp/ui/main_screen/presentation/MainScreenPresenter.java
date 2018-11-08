@@ -70,6 +70,16 @@ public class MainScreenPresenter implements MainScreenInterface.Presenter, ApiIn
         }
     }
 
+    @Override
+    public void dismissClicked() {
+        view.exitApp();
+    }
+
+    @Override
+    public void retryClicked() {
+        apiInterface.getRates(this);
+    }
+
     private void calculateResult(double value) {
 
         double result = 0;
@@ -114,6 +124,6 @@ public class MainScreenPresenter implements MainScreenInterface.Presenter, ApiIn
 
     @Override
     public void onFailure(Throwable t) {
-        view.showErrorMessage();
+        view.showNoDataErrorDialog();
     }
 }

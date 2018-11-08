@@ -4,4 +4,9 @@
     <string name="convert_submit">Convert</string>
     <string name="convert_to_text">Convert to:</string>
     <string name="wrong_input_error">Wrong input</string>
+    <string name="value_input_hint">Value:</string>
+    <string name="no_data_dialog_title">No Data</string>
+    <string name="no_data_dialog_message">Check internet connection</string>
+    <string name="no_data_dialog_cancel_text">Cancel</string>
+    <string name="no_data_dialog_retry_text">Retry</string>
 </resources>

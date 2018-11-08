@@ -20,6 +20,10 @@ public interface MainScreenInterface {
         void setConvertFromToDefault();
 
         void clearResult();
+
+        void showNoDataErrorDialog();
+
+        void exitApp();
     }
 
 
@@ -35,5 +39,8 @@ public interface MainScreenInterface {
 
         void convertPressed(String value);
 
+        void dismissClicked();
+
+        void retryClicked();
     }
 }
