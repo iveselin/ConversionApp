@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">ConversionApp</string>
+    <string name="convert_from_text">Convert from:</string>
+    <string name="convert_submit">Convert</string>
+    <string name="convert_to_text">Convert to:</string>
+    <string name="wrong_input_error">Wrong input</string>
 </resources>

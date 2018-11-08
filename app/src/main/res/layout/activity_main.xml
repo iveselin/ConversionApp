@@ -1,18 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.main_screen.view.MainActivity">
+
 
     <TextView
+        android:id="@+id/convert_from_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/default_margin"
+        android:text="@string/convert_from_text"
+        android:textSize="@dimen/medium_text_size" />
+
+    <LinearLayout
+        android:id="@+id/convert_from"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/convert_from_label"
+        android:layout_margin="@dimen/default_margin"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/convert_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:inputType="numberDecimal" />
+
+        <Spinner
+            android:id="@+id/convert_from_selection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/convert_to_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/convert_from"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/default_margin"
+        android:text="@string/convert_to_text"
+        android:textSize="@dimen/medium_text_size" />
+
+    <LinearLayout
+        android:id="@+id/convert_to"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/convert_to_label"
+        android:layout_margin="@dimen/default_margin">
+
+        <EditText
+            android:id="@+id/convert_result"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:inputType="none"
+            android:textSize="@dimen/medium_text_size"
+            tools:text="result" />
+
+        <Spinner
+            android:id="@+id/convert_to_selection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/convert_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="@dimen/default_margin"
+        android:text="@string/convert_submit" />
 
 </RelativeLayout>
